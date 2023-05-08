@@ -14,4 +14,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IntertnshipTest.DAL\IntertnshipTest.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
