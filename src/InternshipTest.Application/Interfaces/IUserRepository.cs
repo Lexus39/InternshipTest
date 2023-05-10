@@ -12,7 +12,11 @@ namespace InternshipTest.Application.Interfaces
         public Task<User> GetUserByIdAsync(int id);
         public Task<User> GetUserByLoginAsync(string login);
         public Task<List<User>> GetAllActiveUsersAsync();
-        public Task<User> UpdateUserAsync(User user);
-        public Task<User> AddUserAsync(User user);
+        public Task UpdateUserAsync(User user);
+        public Task<int> AddUserAsync(User user);
+        public Task DeleteUserAsync(int id);
+        public Task<UserGroup> GetUserGroupByIdAsync(int id);
+        public Task<UserState> GetUserStateByCodeAsync(string code);
+        public Task<int> GetNumbersOfAdminsAsync();
     }
 }

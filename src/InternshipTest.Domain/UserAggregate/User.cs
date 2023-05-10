@@ -26,23 +26,9 @@ namespace InternshipTest.Domain.UserAggregate
             UserState = userState;
         }
 
-        public static User CreateUser(UserCreateParameters createParameters)
-        {
-            if (createParameters.UserState.Code != "Active")
-                throw new InvalidOperationException(nameof(createParameters));
-            return new User(id: 0, login: createParameters.Login, password: createParameters.Password,
-                createdDate: DateTime.Now, userGroup: createParameters.UserGroup,
-                userState: createParameters.UserState);
-        }
-
-        public static User UpdateUser(UserUpdateParameters updateParameters)
-        {
-            if (updateParameters.UserState.Code != "Active")
-                throw new InvalidOperationException(nameof(updateParameters));
-            return new User(id: updateParameters.Id, login: updateParameters.Login,
-                password: updateParameters.Password, createdDate: updateParameters.CreatedDate,
-                userGroup: updateParameters.UserGroup, userState: updateParameters.UserState);
-        }
+        public static User CreateUser(string login, string password, UserGroup group, UserState state)
+            => new(id: 0, login: login, password: password, 
+                createdDate: DateTime.Now, userGroup: group, userState: state);
 
         public void UpdatePassword(string password)
         {
