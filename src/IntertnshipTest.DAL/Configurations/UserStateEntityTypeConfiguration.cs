@@ -28,6 +28,12 @@ namespace IntertnshipTest.DAL.Configurations
             builder.Property(s => s.Description)
                 .HasColumnName("description")
                 .IsRequired();
+
+            builder.HasData(new[]
+            {
+                new UserStateEntity {Id = 1, Code = "Active", Description = "Active users"},
+                new UserStateEntity {Id = 2, Code = "Blocked", Description = "Deleted users"}
+            });
         }
     }
 }

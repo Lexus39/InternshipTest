@@ -28,6 +28,12 @@ namespace IntertnshipTest.DAL.Configurations
             builder.Property(g => g.Description)
                 .HasColumnName("description")
                 .IsRequired();
+
+            builder.HasData(new[]
+            {
+                new UserGroupEntity {Id = 1, Code = "Admin", Description = "Group for admin"},
+                new UserGroupEntity {Id = 2, Code = "User", Description = "Group for users"}
+            });
         }
     }
 }
